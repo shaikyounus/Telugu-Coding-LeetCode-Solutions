@@ -1,0 +1,68 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public TreeNode insertIntoBST(TreeNode root, int val) {
+        // null node istey manam emo new node create cheyyali
+                if(root==null)
+                {
+                    return new TreeNode(val);
+                }
+        
+        TreeNode curr_node=root;// reference tesukovali endk antey binary search tree return cheyyali kada so reference tesukunteyy ee curr_node ni manuplate cheskunna manaki root node maradu
+            while(true)
+            {
+                // oka vele curr_node value icina target value kanna ekkuva vuntey manam emo curr-node ni curr_node.left ki assign chesstam
+                if(curr_node.val>val)
+                {// ekkada kuda left child vuntey traverse  chestam lekaothey new node left child ki attach chestam
+                    if(curr_node.left!=null)
+                    {
+                    curr_node=curr_node.left;
+                        
+                    }
+                    else
+                    {
+                        curr_node.left= new TreeNode(val);
+                        break;
+                    }
+                }
+                else
+                     // oka vele curr_node value icina target value kanna takkuva vuntey manam emo curr-node ni curr_node.right ki assign chesstam
+                {
+                    
+                    
+                    {// ekkada kuda right child vuntey traverse  chestam lekaothey new node right child ki attach chestam
+                    if(curr_node.right!=null)
+                    {
+                        curr_node=curr_node.right;
+                    }
+                    else
+                    {
+                        curr_node.right= new TreeNode(val);
+                        break;
+                    }
+                }
+            }
+        
+        
+        
+        return root;
+        
+    }
+    
+}
+
+
+
